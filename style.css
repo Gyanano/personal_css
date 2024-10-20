@@ -202,7 +202,7 @@ body {
     right: 10px;
     width: 95px;
     height: 95px;
-    background: url('chatgptlogo.png') no-repeat;
+    background: url('https://cdn.jsdelivr.net/gh/Gyanano/personal_css@main/chatgpt.png') no-repeat;
     background-size: contain;
     opacity: 0.2;
 }
@@ -212,7 +212,7 @@ body {
     right: 10px;
     width: 95px;
     height: 95px;
-    background: url('claudelogo.png') no-repeat;
+    background: url('https://cdn.jsdelivr.net/gh/Gyanano/personal_css@main/claudelogo.png') no-repeat;
     background-size: contain;
     opacity: 0.2;
 }
