@@ -1,0 +1,218 @@
+body {
+    transition: background-color 0.3s ease;
+    background-color: #f9f9f9;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+}
+.menu-bar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header {
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container {
+    max-width: 1200px;
+    margin: 20px auto 0; /* Increased margin to fully accommodate the fixed header */
+    padding: 20px;
+}
+.title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+.login-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #00bcd4;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.login-button:hover {
+    background-color: #0097a7;
+}
+.mode-switch-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.mode-switch-label {
+    font-weight: bold;
+}
+.mode-switch {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: #00bcd4;
+    border-radius: 20px;
+    padding: 5px;
+    transition: background-color 0.3s ease;
+    position: relative;
+    width: 60px;
+}
+.mode-switch .switch-button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    transition: transform 0.3s ease;
+    position: absolute;
+    left: 5px;
+}
+.game-room-mode {
+    background-color: #9c27b0;
+}
+.game-room-mode .switch-button {
+    transform: translateX(30px);
+}
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: relative;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+.closed {
+    opacity: 0.5;
+    pointer-events: none;
+}
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.status-circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.green {
+    background-color: #4caf50;
+}
+.yellow {
+    background-color: #ffeb3b;
+}
+.red {
+    background-color: #f44336;
+}
+.gray {
+    background-color: #9e9e9e;
+}
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.card-content p {
+    font-size: 1rem;
+    color: #606060;
+}
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+.free {
+    background-color: #e3f2fd;
+    color: #1565c0;
+}
+.plus {
+    background-color: #ede7f6;
+    color: #6a1b9a;
+}
+.pro {
+    background-color: #fce4ec;
+    color: #ad1457;
+}
+.grid {
+    display: grid;
+    gap: 20px;
+}
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+.chatgpt-watermark-image {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 95px;
+    height: 95px;
+    background: url('chatgptlogo.png') no-repeat;
+    background-size: contain;
+    opacity: 0.2;
+}
+.claude-watermark-image {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 95px;
+    height: 95px;
+    background: url('claudelogo.png') no-repeat;
+    background-size: contain;
+    opacity: 0.2;
+}

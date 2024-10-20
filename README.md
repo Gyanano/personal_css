@@ -1,1 +1,1 @@
-# personal_css
+This is a repository for storing CSS files.
