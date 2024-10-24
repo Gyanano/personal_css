@@ -89,6 +89,7 @@
 
 /* Inactive state */
 .floating-widget.inactive .morphing-container {
+    background-color: #BF6A4D;
     transform: translateX(35px);
 }
 
