@@ -48,7 +48,6 @@
 }
 
 .menu-content {
-    opacity: 0;
     padding: 15px;
     max-height: 200px;
     overflow-y: auto;
