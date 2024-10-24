@@ -2,7 +2,7 @@ body {
     transition: background-color 0.3s ease;
     background-color: #f9f9f9;
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif, 'Roboto';
     justify-content: center;
     align-items: center;
 }
@@ -54,75 +54,55 @@ body {
     margin-bottom: 2rem;
 }
 .login-container {
-    background-color: white;
-    padding: 40px;
-    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
-.login-title {
-    font-size: 1.5rem;
+.login-container h2 {
+    margin: 0 0 1rem 0;
+    font-size: 24px;
     font-weight: bold;
-    margin-bottom: 20px;
 }
-.input-field {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
+.login-container p {
+    margin-bottom: 1.5rem;
+    color: #666;
 }
-.login-button {
-    width: 100%;
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 95%;
+    padding: 10px 0px 10px 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.login-container input[type="submit"] {
+    background-color: #000;
+    color: #fff;
+    margin-top: 1rem;
     padding: 10px;
-    background-color: #00bcd4;
+    width: 100%;
     border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 1rem;
+    border-radius: 4px;
+    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
-.login-button:hover {
-    background-color: #0097a7;
+.login-container input[type="submit"]:hover {
+    background-color: #333;
 }
-.mode-switch-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.login-container .signup-link {
+    display: block;
+    margin-top: 1rem;
+    color: #666;
 }
-.mode-switch-label {
-    font-weight: bold;
+.login-container .signup-link a {
+    color: #007bff;
+    text-decoration: none;
 }
-.mode-switch {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    background-color: #00bcd4;
-    border-radius: 20px;
-    padding: 5px;
-    transition: background-color 0.3s ease;
-    position: relative;
-    width: 60px;
-}
-.mode-switch .switch-button {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: white;
-    transition: transform 0.3s ease;
-    position: absolute;
-    left: 5px;
-}
-.game-room-mode {
-    background-color: #9c27b0;
-}
-.game-room-mode .switch-button {
-    transform: translateX(30px);
+.login-container .signup-link a:hover {
+    text-decoration: underline;
 }
 .card {
     background-color: white;

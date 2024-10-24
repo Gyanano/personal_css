@@ -1,1 +1,1 @@
-This is a repository for storing CSS files.
+This is a repository for storing files for Orion AI Mirror.
