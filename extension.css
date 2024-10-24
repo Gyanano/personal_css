@@ -1,7 +1,7 @@
 :root {
     --claude-primary: #BF6A4D;
-    /* --claude-light: #BF6A4D;
-    --claude-dark: #BF6A4D; */
+    --claude-light: #BF6A4D;
+    --claude-dark: #BF6A4D;
     --ball-size: 50px;
     --menu-width: 240px;
     --menu-height: 220px;
@@ -121,7 +121,7 @@
 
 /* Hover effects */
 .floating-widget:not(.active) .morphing-ball:hover {
-    background: var(--claude-light);
+    background: var(--claude-primary);
     transform: scale(1.05);
     transform: translateX(-35px);
 }
