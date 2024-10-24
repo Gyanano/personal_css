@@ -1,0 +1,142 @@
+:root {
+    --claude-primary: #BF6A4D;
+    /* --claude-light: #BF6A4D;
+    --claude-dark: #BF6A4D; */
+    --ball-size: 50px;
+    --menu-width: 240px;
+    --menu-height: 220px;
+    --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.floating-widget {
+    position: fixed;
+    right: 0;
+    top: 120px;
+    z-index: 100;
+}
+
+.morphing-container {
+    position: relative;
+    width: var(--ball-size);
+    height: var(--ball-size);
+    cursor: pointer;
+    transition: all 0.3s var(--transition-timing);
+}
+
+.morphing-ball {
+    position: absolute;
+    right: 0;
+    width: var(--ball-size);
+    height: var(--ball-size);
+    background: var(--claude-primary);
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(100, 53, 0, 0.541);
+    color: rgb(255, 241, 226);
+    transition: all 0.3s var(--transition-timing);
+    overflow: hidden;
+}
+
+.toggle-icon {
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transition: all 0.1s ease;
+}
+
+.menu-content {
+    opacity: 0;
+    padding: 15px;
+    max-height: 200px;
+    overflow-y: auto;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+    scrollbar-width: thin;
+    transition: all 0.2s ease;
+    visibility: hidden;
+}
+
+.menu-item {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    transition: all 0.2s;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.menu-item-icon {
+    width: 24px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+/* Inactive state */
+.floating-widget.inactive .morphing-container {
+    transform: translateX(35px);
+}
+
+.floating-widget.inactive .morphing-ball {
+    transform: scale(0.9);
+    background: var(--claude-primary);
+}
+
+/* Active state */
+.floating-widget.active .morphing-container {
+    width: var(--menu-width);
+    height: var(--menu-height);
+}
+
+.floating-widget.active .morphing-ball {
+    width: var(--menu-width);
+    height: var(--menu-height);
+    border-radius: 14px;
+}
+
+.floating-widget.active .toggle-icon {
+    opacity: 0;
+}
+
+.floating-widget.active .menu-content {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Hover effects */
+.floating-widget:not(.active) .morphing-ball:hover {
+    background: var(--claude-light);
+    transform: scale(1.05);
+    transform: translateX(-35px);
+}
+
+/* Animation for menu items */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.floating-widget.active .menu-item {
+    animation: slideIn 0.3s var(--transition-timing) forwards;
+}
