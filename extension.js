@@ -1,35 +1,44 @@
-const widget = document.getElementById('floatingWidget');
+document.addEventListener('DOMContentLoaded', () => {
+    const widget = document.getElementById('floatingWidget');
 
-function activeMenu() {
-    if (!widget.classList.contains('active')) {
-        widget.classList.remove('inactive');
-        widget.classList.add('active');
+    function activeMenu() {
+        if (widget && !widget.classList.contains('active')) {
+            widget.classList.remove('inactive');
+            widget.classList.add('active');
+        }
     }
-}
-function deactiveMenu() {
-    if (widget.classList.contains('active')) {
-        widget.classList.remove('active');
-        widget.classList.add('inactive');
-    }
-}
 
-document.addEventListener('click', (e) => {
-    if (!widget.contains(e.target)) {
-        deactiveMenu();
+    function deactiveMenu() {
+        if (widget && widget.classList.contains('active')) {
+            widget.classList.remove('active');
+            widget.classList.add('inactive');
+        }
     }
-});
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && widget.classList.contains('active')) {
-        deactiveMenu();
-    }
-});
 
-const menuItems = document.querySelectorAll('.menu-item');
-menuItems.forEach(item => {
-    item.addEventListener('click', () => {
-        const value = item.getAttribute('data-value');
-        handleMenuItemClick(value);
-    });
+    if (widget) {
+        document.addEventListener('click', (e) => {
+            if (!widget.contains(e.target)) {
+                deactiveMenu();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && widget.classList.contains('active')) {
+                deactiveMenu();
+            }
+        });
+
+        const menuItems = document.querySelectorAll('.menu-item');
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const value = item.getAttribute('data-value');
+                handleMenuItemClick(value);
+            });
+        });
+
+        // 将 activeMenu 函数添加到全局作用域
+        window.activeMenu = activeMenu;
+    }
 });
 
 /**
