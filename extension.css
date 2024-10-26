@@ -97,6 +97,7 @@
 }
 
 .floating-widget.active .morphing-ball {
+    transform: translateX(-35px);
     width: var(--menu-width);
     height: var(--menu-height);
     border-radius: 14px;
