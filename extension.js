@@ -111,6 +111,9 @@ function getContents() {
         "div.font-claude-message, div.font-user-message"
     );
 
+    // TODO: get the contents of artifacts
+    // class="fixed bottom-0 top-0 flex w-full flex-col transition-[width] z-[5] right-0 md:w-[calc(50vw-2.5rem)] pointer-events-none pt-16 md:pb-4 md:pr-1"
+
     return {
         elements,
         title: titleEle.textContent,
@@ -303,7 +306,7 @@ function exportMsgToMd() {
 
     const { elements, title } = getContents();
 
-    var timestamp = getTimestamp();
+    var timestamp = getTimeStamp();
     markdown += `\# ${title || "Claude Chat"}\n\`${timestamp}\`\n\n`;
 
     for (var i = 0; i < elements.length; i++) {
@@ -462,7 +465,9 @@ function exportMsgToImage() {
     const { title } = getContents();
     let filename = title ? title.trim().toLowerCase().replace(/^[^\w\d]+|[^\w\d]+$/g, '').replace(/[\s\W-]+/g, '-') : "claude_message";
     
-    messageContainer.prepend(`<h1>${title}</h1>`);
+    const msgTitle = document.createElement("h1");
+    msgTitle.textContent = title;
+    messageContainer.prepend(msgTitle);
     
     html2canvas(
         messageContainer, {
@@ -477,6 +482,8 @@ function exportMsgToImage() {
         link.download = `${filename}.png`
         link.click();
         canvas.remove();
+    }).then(()=>{
+        msgTitle.remove();
     });
 }
 
