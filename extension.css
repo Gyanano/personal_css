@@ -15,19 +15,12 @@
     z-index: 100;
 }
 
-.morphing-container {
-    position: relative;
+.morphing-ball {
+    position: absolute;
+    right: -32px;
     width: var(--ball-size);
     height: var(--ball-size);
     cursor: pointer;
-    transition: all 0.3s var(--transition-timing);
-}
-
-.morphing-ball {
-    position: absolute;
-    right: 0;
-    width: var(--ball-size);
-    height: var(--ball-size);
     background: var(--claude-primary);
     border-radius: 50%;
     box-shadow: 0 2px 10px rgba(100, 53, 0, 0.541);
